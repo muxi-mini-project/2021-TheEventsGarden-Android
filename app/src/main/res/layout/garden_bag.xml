@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3B5B5">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_data_left"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="#C3B5B5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/data_left_foreground"
+            android:tint="#F9F3F1"
+            android:layout_marginLeft="-20dp"/>
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/garden_text_pi_background"
+            android:text="背"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="2dp"/>
+
+        <TextView
+            android:layout_width="39dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/garden_text_pi_background"
+            android:gravity="center"
+            android:text="包"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="28dp"
+        android:background="@drawable/garden_bag_title_background"
+        android:text="种子区"
+        android:textSize="20sp"
+        android:textColor="#5F5B5B"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="140dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="40dp"
+            android:orientation="vertical"
+            android:background="@drawable/garden_colum_background">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:src="@mipmap/data_head_foreground"
+                android:layout_gravity="center_horizontal"/>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/garden_buy_background"
+                android:text="出售"
+                android:textSize="18sp"
+                android:textColor="#807E7E"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="×10"
+            android:textColor="#ff5f5b5b"
+            android:textSize="20sp"
+            android:layout_marginLeft="-50dp"
+            android:padding="8sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="28dp"
+        android:background="@drawable/garden_bag_title_background"
+        android:text="皮肤区"
+        android:textSize="20sp"
+        android:textColor="#5F5B5B"
+        android:textStyle="bold"
+        android:gravity="center"
+       android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="15dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="140dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical"
+        android:background="@drawable/garden_colum_background"
+        android:layout_marginBottom="20dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/data_head_foreground"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/garden_buy_background"
+            android:text="出售"
+            android:textSize="18sp"
+            android:textColor="#807E7E"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="140dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical"
+        android:background="@drawable/garden_colum_background"
+        android:layout_marginBottom="20dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:src="@mipmap/data_head_foreground"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/garden_buy_background"
+            android:text="出售"
+            android:textSize="18sp"
+            android:textColor="#807E7E"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="140dp"
+android:layout_height="160dp"
+android:layout_marginLeft="40dp"
+android:orientation="vertical"
+android:background="@drawable/garden_colum_background">
+<ImageView
+    android:layout_width="100dp"
+    android:layout_height="110dp"
+    android:src="@mipmap/data_head_foreground"
+    android:layout_gravity="center_horizontal"/>
+<Button
+    android:layout_width="80dp"
+    android:layout_height="30dp"
+    android:background="@drawable/garden_buy_background"
+    android:text="出售"
+    android:textSize="18sp"
+    android:textColor="#807E7E"
+    android:textStyle="bold"
+    android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
+</LinearLayout>
