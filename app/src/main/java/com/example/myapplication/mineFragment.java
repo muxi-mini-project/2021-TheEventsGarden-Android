@@ -11,14 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-//视图和fragment的关联。修改CrimeListFragment类文件
+import com.example.myapplication.R;
+import com.example.myapplication.basicdataActivity;
+
+
 public class mineFragment extends Fragment {
-    private TextView name;//昵称
+    private TextView name,modify,fund,month,rule;//昵称、修改信息、资金、月完成度、规则
     private ImageView head;//头像
-    private TextView modify;//点击文本，修改信息
-    private TextView fund;//点击文本，查看资金
-    private TextView month;//点击文本，查看月完成度
-    private TextView rule;//点击文本，查看规则
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +35,8 @@ public class mineFragment extends Fragment {
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), basicdataActivity.class);
+                Intent intent;
+                intent = new Intent(getActivity(), basicdataActivity.class);
                 startActivity(intent);//跳转到修改界面，但没传数据！！《-------
             }
         });
@@ -46,7 +46,8 @@ public class mineFragment extends Fragment {
         month.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), basicdataActivity.class);
+                Intent intent;
+                intent = new Intent(getActivity(), basicdataActivity.class);
                 startActivity(intent);//跳转界面还没出图《------
             }
         });
@@ -56,7 +57,8 @@ public class mineFragment extends Fragment {
         rule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), basicdataActivity.class);
+                Intent intent;
+                intent = new Intent(getActivity(), basicdataActivity.class);
                 startActivity(intent);//跳转界面还没出图《-------
             }
         });

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/one"
+        android:title="@string/one"
+        android:icon="@mipmap/shouye_ic"/>
+
+    <item android:id="@+id/two"
+        android:title="@string/two"
+        android:icon="@mipmap/daiban_ic"/>
+
+    <item android:id="@+id/thr"
+        android:title="@string/thr"
+        android:icon="@mipmap/me_ic"/>
+</menu>

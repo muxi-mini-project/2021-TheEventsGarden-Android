@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Notepad</string>
+    <string name="one">花园</string>
+    <string name="two">待办</string>
+    <string name="thr">我的</string>
+    <string name="action">开始</string>
+    <string name="newday">新建待办</string>
+    <string name="mouth">一月</string>
+    <string name="day">2019</string>
+    <string name="showday">日历</string>
+    <string name="daibanname">待办名称</string>
+    <string name="time2">确定时间</string>
+    <string name="_120min">共120min</string>
+    <string name="start_time">已进行</string>
 </resources>

@@ -12,7 +12,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mine_activity_fragment);
+        setContentView(R.layout.activity_container);
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container_empty);
         //设置从activity_fragment.xml布局里实例化activity视图。然后在容器中查找FragmentManager里的fragment

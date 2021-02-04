@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/iv_data_left"
+            android:id="@+id/iv_bag_left"
             android:layout_width="90dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
@@ -63,9 +65,11 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:src="@mipmap/data_head_foreground"
-                android:layout_gravity="center_horizontal"/>
+                android:src="@mipmap/garden_bag_flowers_foreground"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"/>
             <Button
+                android:id="@+id/bt_flower_sale"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:background="@drawable/garden_buy_background"
@@ -78,10 +82,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="×10"
+            android:text="×"
             android:textColor="#ff5f5b5b"
             android:textSize="20sp"
             android:layout_marginLeft="-50dp"
+            android:padding="8sp"/>
+        <TextView
+            android:id="@+id/tv_flower_mount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="#ff5f5b5b"
+            android:textSize="20sp"
+            android:layout_marginLeft="-15dp"
             android:padding="8sp"/>
 
     </LinearLayout>
@@ -109,19 +122,11 @@
         android:background="@drawable/garden_colum_background"
         android:layout_marginBottom="20dp">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="110dp"
-            android:src="@mipmap/data_head_foreground"
-            android:layout_gravity="center_horizontal"/>
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:background="@drawable/garden_buy_background"
-            android:text="出售"
-            android:textSize="18sp"
-            android:textColor="#807E7E"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/iv_flower1"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/garden_bag_flower1_foreground"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
     <LinearLayout
@@ -132,19 +137,11 @@
         android:background="@drawable/garden_colum_background"
         android:layout_marginBottom="20dp">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="110dp"
-            android:src="@mipmap/data_head_foreground"
-            android:layout_gravity="center_horizontal"/>
-        <Button
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:background="@drawable/garden_buy_background"
-            android:text="出售"
-            android:textSize="18sp"
-            android:textColor="#807E7E"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/iv_flower2"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/garden_bag_flower2_foreground"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 </LinearLayout>
@@ -156,19 +153,11 @@ android:layout_marginLeft="40dp"
 android:orientation="vertical"
 android:background="@drawable/garden_colum_background">
 <ImageView
-    android:layout_width="100dp"
-    android:layout_height="110dp"
-    android:src="@mipmap/data_head_foreground"
+    android:id="@+id/iv_flower3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@mipmap/garden_bag_flower3_foreground"
     android:layout_gravity="center_horizontal"/>
-<Button
-    android:layout_width="80dp"
-    android:layout_height="30dp"
-    android:background="@drawable/garden_buy_background"
-    android:text="出售"
-    android:textSize="18sp"
-    android:textColor="#807E7E"
-    android:textStyle="bold"
-    android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
 </LinearLayout>

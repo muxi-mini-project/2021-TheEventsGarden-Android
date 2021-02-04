@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+        <color name="colorPrimary">@color/nagvigation</color>
+        <color name="colorPrimaryDark">@color/nagvigation</color>
+        <color name="colorAccent">#03DAC5</color>
+        <color name="nagvigation">#C4F4E1</color>
+        <color name="selectItem">#134857</color>
+        <color name="noselectItem">#7a7374</color>
+        <color name="nulls">#00F6F6F6</color>
+        <color name="toolabr">#C3B4B4</color>
 </resources>
