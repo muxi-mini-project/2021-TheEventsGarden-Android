@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         fragmentTransaction.show(fragment).commit();
     }
+
 }
 
 

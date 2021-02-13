@@ -227,7 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="69dp"
                     android:gravity="center_vertical"
-                    android:text="金币使用规则及等级说明"
+                    android:text="时间使用规则"
                     android:textColor="#1C3465"
                     android:textSize="17sp"
                     android:textStyle="bold" />

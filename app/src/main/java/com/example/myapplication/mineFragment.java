@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,13 +12,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication.R;
-import com.example.myapplication.basicdataActivity;
-
 
 public class mineFragment extends Fragment {
-    private TextView name,modify,fund,month,rule;//昵称、修改信息、资金、月完成度、规则
+    private TextView name, modify, fund, month, rule;//昵称、修改信息、资金、月完成度、规则
     private ImageView head;//头像
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,7 @@ public class mineFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(getActivity(), basicdataActivity.class);
-                startActivity(intent);//跳转到修改界面，但没传数据！！《-------
+                startActivityForResult(intent, 1);//跳转到修改界面，但没传数据！！《-------
             }
         });
 
@@ -53,17 +52,16 @@ public class mineFragment extends Fragment {
         });
 
         //查看规则
-        rule= (TextView) v.findViewById(R.id.tv_mine_rule);//界面没出，还没跳转《--------
+        rule = (TextView) v.findViewById(R.id.tv_mine_rule);//界面没出，还没跳转《--------
         rule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(getActivity(), basicdataActivity.class);
-                startActivity(intent);//跳转界面还没出图《-------
+                intent = new Intent(getActivity(), ruleActivity.class);
+                startActivityForResult(intent, 3);//跳转到修改界面，但没传数据！！《-------
             }
         });
         return v;
     }
-
 }
 
