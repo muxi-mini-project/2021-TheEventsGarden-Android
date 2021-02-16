@@ -20,7 +20,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
+    int index = 2;
+    private Fragment mFragment;
     private gardenFragment oneFragment = new gardenFragment();
     private listFragment twoFragment = new listFragment();
     private mineFragment thrFragemnt = new mineFragment();
@@ -31,19 +32,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_activity_fragment);
+
+        index = getIntent().getIntExtra("choose",2);
+        if(index == 2){
+           mFragment = twoFragment;
+        } else if(index == 3){
+            mFragment = thrFragemnt;
+        }
+
         initView();
-        initFragment();
+        initFragment(mFragment);
     }
 
     /**
      * 初始化fragment
      */
-    private void initFragment() {
+    private void initFragment(Fragment fragment) {
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.mainContent, oneFragment).add(R.id.mainContent, twoFragment).add(R.id.mainContent, thrFragemnt)
                 .hide(oneFragment).hide(twoFragment).hide(thrFragemnt)
-                .show(twoFragment).commit();
+                .show(fragment).commit();
     }
 
     /**

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -16,17 +17,26 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.room.Database;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public class basicdataActivity extends AppCompatActivity {
+    int index = 0; //用于删除数据库中的空数据
+
+    Info mInfo;
+    InfoDatabase mInfoDatabase;
+    InfoDao mInfoDao;
+
     private ImageView left;//返回
     private TextView reserve;//保存
     private ImageView head;//头像
@@ -42,29 +52,51 @@ public class basicdataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mInfoDatabase = InfoDatabase.getInstance(this);
+        mInfoDao = mInfoDatabase.getInfoDao();
+
+        List<Info> list = mInfoDao.getAllInfo();
+        index = list.size() - 1;
+        mInfo = list.get(index);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_basicdata);
+
         //实现返回的imageview《-------
         left = (ImageView) findViewById(R.id.iv_data_left);
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Result(10);
-                finish();//直接finish就能返回上一个gragment，即minefragment
+                left();
             }
         });
 
         //textview实现保存修改的资料《-------
         reserve = (TextView) findViewById(R.id.tv_data_reserve);
+        reserve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<Info> list = mInfoDao.getAllInfo();
+                index = list.size() - 2;
+
+                //保存姓名简介等内容
+                String name_text = name.getText().toString();
+                String intro_text = introduce.getText().toString();
+                Info info = new Info(name_text, intro_text, msex);
+                mInfoDao.InsertInfo(info);
+                Toast.makeText(getApplicationContext(), "保存成功", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //修改昵称《------
         name = (EditText) findViewById(R.id.et_data_name);
-
+        name.setText(mInfo.getName());
 
         //简介《-----
         introduce = (EditText) findViewById(R.id.et_data_introduce);
+        name.setText(mInfo.getIntroduction());
 
-        //性别 《------怎么保存信息？？？
+        //性别
         sex = (RadioGroup) findViewById(R.id.rg_data_sex);//获取单选按钮
         sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -93,6 +125,33 @@ public class basicdataActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    //设置返回事件
+    public void left(){
+        //删除从 mineFragment 保存的空数据
+        List<Info> list2 = mInfoDao.getAllInfo();
+        Info info = list2.get(index);
+        mInfoDao.DeleteInfo(info);
+
+        Intent intent = new Intent(basicdataActivity.this,MainActivity.class);
+        intent.putExtra("choose",3);
+        startActivity(intent);
+
+        finish();//直接finish就能返回上一个gragment，即minefragment
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (keyCode == KeyEvent.KEYCODE_BACK )
+        {
+            left();
+            return false;
+        }
+        return false;
+
     }
 
     private void initView(View inflate1) {
@@ -226,4 +285,3 @@ public class basicdataActivity extends AppCompatActivity {
         }
     }
 }
-
