@@ -57,8 +57,11 @@ public class basicdataActivity extends AppCompatActivity {
 
         List<Info> list = mInfoDao.getAllInfo();
         index = list.size() - 1;
-        mInfo = list.get(index);
-
+        if(index >= 2){
+            mInfo = list.get(index - 1);
+        } else {
+            mInfo = list.get(index);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_basicdata);
 
@@ -94,7 +97,7 @@ public class basicdataActivity extends AppCompatActivity {
 
         //简介《-----
         introduce = (EditText) findViewById(R.id.et_data_introduce);
-        name.setText(mInfo.getIntroduction());
+        introduce.setText(mInfo.getIntroduction());
 
         //性别
         sex = (RadioGroup) findViewById(R.id.rg_data_sex);//获取单选按钮
@@ -141,7 +144,7 @@ public class basicdataActivity extends AppCompatActivity {
         finish();//直接finish就能返回上一个gragment，即minefragment
     }
 
-
+    //自定义系统返回
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -151,9 +154,9 @@ public class basicdataActivity extends AppCompatActivity {
             return false;
         }
         return false;
-
     }
 
+    //《---------------------------------------------------------
     private void initView(View inflate1) {
 
         head = (ImageView) findViewById(R.id.iv_head);

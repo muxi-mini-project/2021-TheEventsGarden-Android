@@ -15,7 +15,7 @@ public class EventsLab {
     @ColumnInfo(name = "DoneOrUndone")
     private boolean circumstance;
 
-    public EventsLab(String title,boolean circumstance,int id){
+    public EventsLab(String title,int id,boolean circumstance){
         this.title = title;
         this.id = id;
         this.circumstance = circumstance;

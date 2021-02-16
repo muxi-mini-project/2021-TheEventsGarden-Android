@@ -45,7 +45,6 @@ public class mineFragment extends Fragment {
 
         name = (TextView) v.findViewById(R.id.tv_mine_name);
         if(list.size() == 0){
-            name.setText("昵称");
         } else {
             name.setText(info.getName());
         }
@@ -89,22 +88,6 @@ public class mineFragment extends Fragment {
             }
         });
         return v;
-    }
-
-    //返回后刷新fragment
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (hidden) {
-            //隐藏
-        } else {
-            Info info = null;
-            List<Info> list = mInfoDao.getAllInfo();
-            if(list.size() != 0) {
-                info = list.get(list.size() - 1);
-            }
-            name.setText(info.getName());
-        }
     }
 }
 
