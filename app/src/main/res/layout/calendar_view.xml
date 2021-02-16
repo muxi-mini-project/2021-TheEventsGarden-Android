@@ -9,9 +9,10 @@
 
     <TextView
         android:id="@+id/news2"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
+        android:layout_width="176dp"
+        android:layout_height="37dp"
         android:layout_margin="5dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/shape"
         android:drawableStart="@mipmap/add"
         android:drawableLeft="@mipmap/adds"
@@ -87,6 +88,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
@@ -104,6 +106,9 @@
             android:id="@+id/left"
             android:layout_width="53dp"
             android:layout_height="61dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/data_left_foreground" />
 
         <TextView
@@ -114,8 +119,10 @@
             android:textColor="#182D61"
             android:textSize="30sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="10dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -150,6 +157,7 @@
                     android:id="@+id/undone_events"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="无"
                     android:textColor="#C65050"
                     android:textSize="24sp" />
@@ -171,6 +179,7 @@
                     android:id="@+id/done_events"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="无"
                     android:textSize="24sp" />
             </LinearLayout>

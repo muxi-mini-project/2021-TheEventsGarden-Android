@@ -59,8 +59,10 @@ public class mineFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(getActivity(), basicdataActivity.class);
+
                 mInfoDao.InsertInfo(mInfo);
                 startActivityForResult(intent, 1);
+
                 getActivity().finish();
             }
         });

@@ -1,6 +1,7 @@
 package listpage;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,7 +25,7 @@ import java.util.Calendar;
 
 public class listFragment extends Fragment {
 
-
+    private TextView calendar;
     private TextView years;
     private TextView mouth;
     private TextView news;
@@ -64,12 +65,20 @@ public class listFragment extends Fragment {
         news = (TextView) inflate.findViewById(R.id.news);
         mouth = (TextView) inflate.findViewById(R.id.mouth);
         rec = (RecyclerView) inflate.findViewById(R.id.rec);
+        calendar = inflate.findViewById(R.id.showCalendar);
 
+        calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //设置日期
         Calendar instance = Calendar.getInstance();
         years.setText(String.valueOf(instance.get(Calendar.YEAR)));
-        int s = instance.get(Calendar.MONTH) + 1;
+        final int s = instance.get(Calendar.MONTH) + 1;
         if (s < 10) {
             mouth.setText("0" + s);
         } else {

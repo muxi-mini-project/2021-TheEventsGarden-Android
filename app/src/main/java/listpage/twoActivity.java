@@ -1,6 +1,7 @@
 package listpage;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -28,6 +29,7 @@ import java.util.Date;
 
 public class twoActivity extends AppCompatActivity {
 
+    private TextView calendar;
     private Toolbar toolbar;
     private TextView name;
     private SeekBar seekBar;
