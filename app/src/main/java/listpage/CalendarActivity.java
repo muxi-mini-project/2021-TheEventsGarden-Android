@@ -1,5 +1,6 @@
 package listpage;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -21,8 +22,8 @@ public class CalendarActivity extends AppCompatActivity {
     EventsDao mEventsDao;
     EventsDatabase mEventsDatabase;
 
-    TextView undone,undone_events,done_events,done,percent,date;
-    ImageView mImageView;
+    TextView undone, undone_events, done_events, done, percent, date;
+    ImageView mImageView, left;
 
     int ID = 0;
     int index = 0;
@@ -45,7 +46,6 @@ public class CalendarActivity extends AppCompatActivity {
         percent = findViewById(R.id.percent);
         date = findViewById(R.id.date);
         mImageView = findViewById(R.id.imageView2);
-        mImageView.setColorFilter(Color.rgb(235,252,245));
 
         updateView();
 
@@ -60,13 +60,18 @@ public class CalendarActivity extends AppCompatActivity {
                 */
                 index = 0;
                 ID = (year * 10000 + (month + 1) * 100 + dayOfMonth);
-                date.setText(date_text);
                 updateView();
+                date.setText(date_text);
             }
         });
     }
 
-    public void onClickInsert(View view){
+    public void onClickLeft(View view){
+        finish();
+    }
+
+    // 插入事件 （等 赵 把程序完备后继续写）
+    public void onClickInsert(View view) {
         index++;
         CanBeAdded(false);
         updateView();
@@ -82,20 +87,21 @@ public class CalendarActivity extends AppCompatActivity {
         boolean UnDoneHasBeenAdded = false;
         //建立一个events list用来读取所有events
         List<EventsLab> list = mEventsDao.getAllEvents();
+        String date_text = null;
         StringBuilder text = new StringBuilder();
         StringBuilder text_done = new StringBuilder();
         StringBuilder text_undone = new StringBuilder();
         StringBuilder text2 = new StringBuilder();
         text.append("无");
 
-        //选择相应日期的事件
+        //选择相应日期的事件，将完成与未完成时间分开
         for (int i = 0; i < list.size(); i++) {
             EventsLab eventsLab = list.get(i);
             for (int k = 0; k < list.size(); k++)
                 if (eventsLab.getId() == ID * 100 + k + 1) {
                     count_sum++;
                     if (eventsLab.isCircumstance() == true) {
-                        text_done.append(eventsLab.getTitle()).append(eventsLab.getId()-ID*100).append("\n");
+                        text_done.append(eventsLab.getTitle()).append(eventsLab.getId() - ID * 100).append("\n");
                         DoneHasBeenAdded = true;
                         count_true++;
                     } else {
@@ -113,14 +119,21 @@ public class CalendarActivity extends AppCompatActivity {
         if (UnDoneHasBeenAdded == false)
             undone_events.setText(text);
 
+        //设置完成度
         text2.append("完成度：").append(count_true).append("/").append(count_sum);
         percent.setText(text2);
 
+        //设置日期背景颜色
         if (count_sum == count_true) {
-            mImageView.setColorFilter(Color.rgb(181,242,217));
+            mImageView.setColorFilter(Color.rgb(181, 242, 217));
         } else {
-            mImageView.setColorFilter(Color.rgb(230,195,191));
+            mImageView.setColorFilter(Color.rgb(230, 195, 191));
         }
+
+        //（用于第一次打开日历时）设置当前日期
+        t.setToNow();
+        date_text = String.valueOf(t.monthDay);
+        date.setText(date_text);
     }
 
     //判断数据库中是否有相同的id，有则更换id再插入，无则直接插入
@@ -133,7 +146,7 @@ public class CalendarActivity extends AppCompatActivity {
         for (int i = 0; i < list.size(); i++) {
             eventsLab = list.get(i);
             for (int k = 0; k < list.size(); k++)
-                if (ID * 100 + k == eventsLab.getId()-1) {
+                if (ID * 100 + k == eventsLab.getId() - 1) {
                     record_number = i;
                 }
         }
