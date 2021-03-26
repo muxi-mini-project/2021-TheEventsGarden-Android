@@ -125,7 +125,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="69dp"
                         android:gravity="center"
-                        android:text="我的资金:"
+                        android:text="我的资金(min):"
                         android:textColor="#1C3465"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -135,19 +135,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="69dp"
                         android:gravity="center_vertical"
-                        android:paddingLeft="80dp"
+                        android:paddingLeft="120dp"
                         android:text="100"
                         android:textColor="#1C3465"
                         android:textSize="17sp"
                         android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/iv_mine_right1"
-                        android:layout_width="45dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/mine_right_foreground"
-                        android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
 
                 <View
@@ -263,7 +255,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="match_parent"
         android:background="#EBFCF5" />
 
 

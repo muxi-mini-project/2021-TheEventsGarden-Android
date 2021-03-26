@@ -28,7 +28,7 @@
             android:textSize="22sp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginLeft="-30dp"
+            android:layout_marginLeft="-20dp"
             android:layout_marginRight="2dp"/>
 
         <TextView

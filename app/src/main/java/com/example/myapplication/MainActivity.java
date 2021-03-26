@@ -1,27 +1,28 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
-
-import listpage.listFragment;
-import gardenpage.gardenFragment;
-
+import com.example.myapplication.cloudpage.homeworkFragment;
+import com.example.myapplication.listpage.listFragment;
+import com.example.myapplication.minepage.mineFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private gardenFragment oneFragment = new gardenFragment();
+    private homeworkFragment oneFragment = new homeworkFragment();//<-----作业界面
     private listFragment twoFragment = new listFragment();
     private mineFragment thrFragemnt = new mineFragment();
     private BottomNavigationView mainNavigation;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.mine_activity_fragment);
         initView();
         initFragment();
+       this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       // moveTaskToBack(false);
     }
 
     /**
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (menuItem.getItemId()) {
             case R.id.one:
                 showFragment(oneFragment);
-                mainNavigation.setBackgroundResource(R.color.toolabr);
+                mainNavigation.setBackgroundResource(R.color.nagvigation);
                 break;
             case R.id.two:
                 showFragment(twoFragment);
@@ -91,6 +94,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         fragmentTransaction.show(fragment).commit();
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK)
+        {
+            moveTaskToBack(true);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
 
 

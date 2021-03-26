@@ -33,16 +33,22 @@
         android:paddingStart="10dp"
         android:layout_toEndOf="@id/mouth"
         tools:ignore="RtlSymmetry" />
-
-    <TextView
-        android:id="@+id/showCleardr"
-        android:text="@string/showday"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:layout_centerVertical="true"
+    <ImageView
+        android:id="@+id/garden"
+        android:src="@mipmap/garden_foreground"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-9dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:id="@+id/calendar"
+        android:src="@mipmap/calendar_foreground"
+        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-9dp"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

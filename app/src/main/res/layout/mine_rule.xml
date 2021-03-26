@@ -35,5 +35,82 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="获得"
+        android:textColor="#182D61"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#E9EFD5"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.     完成事件累积使用时长  在规定时间内达到百分之七十五就可以完成事件  增加打钩完成的方框（可打钩完成也可以计时完成【设置事情时选择好时间范围】）"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingLeft="22dp"
+        android:paddingTop="22dp"
+        android:lineSpacingExtra="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2.     售卖花朵（【一朵花售价500分钟】）"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingLeft="22dp"
+        android:paddingTop="8dp"
+        android:lineSpacingExtra="8dp"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="使用"
+        android:textColor="#182D61"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#E9EFD5"
+        android:gravity="center" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. 摘花（一次需要240分钟）"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingLeft="22dp"
+        android:paddingTop="22dp"
+        android:lineSpacingExtra="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. 购买花朵的外观（第一个外观需要500分钟，第二个外观需要1500分钟，第三个外观需要3000分钟）（每一个外观需拥有前一个外观才解锁，第一个需要花费100分钟解锁）"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingLeft="22dp"
+        android:paddingTop="8dp"
+        android:lineSpacingExtra="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. 消除一次未完成事件需要500分钟"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingLeft="22dp"
+        android:paddingTop="8dp"
+        android:lineSpacingExtra="8dp"/>
+
 
 </LinearLayout>

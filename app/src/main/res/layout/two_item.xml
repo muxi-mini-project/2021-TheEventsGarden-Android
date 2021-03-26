@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative"
     android:layout_width="match_parent"
     android:layout_height="67dp"
     android:layout_margin="5dp"
@@ -7,15 +8,29 @@
 
     <Button
         android:id="@+id/action"
-        android:textColor="#fff"
-        android:background="@null"
-        android:textSize="20dp"
-        android:layout_marginRight="5dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:background="@null"
         android:text="@string/action"
-        android:layout_height="wrap_content"/>
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/withelled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:background="@null"
+        android:text="@string/cancneed_to_be_dealt_withelled"
+        android:textColor="#6B6B6B"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -23,4 +38,16 @@
         android:scaleType="fitXY"
         android:src="@mipmap/two_ic" />
 
+    <TextView
+        android:id="@+id/cancelled"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#C74D4C"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/cancelled"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:visibility="gone" />
 </RelativeLayout>

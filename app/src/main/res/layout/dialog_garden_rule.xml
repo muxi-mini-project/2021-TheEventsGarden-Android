@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/garden_noticedialog_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="花园规则"
+        android:textColor="#ffeeab74"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="18dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#EEAB74"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.240分钟可摘取一朵花"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2.后面的外观需要拥有前一个外观才可以解锁"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:lineSpacingExtra="8dp"
+        android:paddingLeft="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3.第一个外观需要500分钟，第二个外观需要1500分钟，第三个外观需要3000分钟"
+        android:textColor="#ff686868"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:lineSpacingExtra="8dp"
+        android:paddingLeft="5dp"/>
+</LinearLayout>
